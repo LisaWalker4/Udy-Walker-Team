@@ -5,6 +5,8 @@
  */
 package fireswampgame;
 
+import byui.cit260.fireSwampGame.model.Player;
+
 /**
  *
  * @author Gina Udy
@@ -15,7 +17,15 @@ public class FireSwampGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Player playerOne = new Player();
+        
+        playerOne.setName("John Doe");
+        playerOne.setCoordinates(2.5);
+        
+        String playerInfo = playerOne.toString(); 
+        System.out.println(playerInfo);
+        
     }
     
 }
