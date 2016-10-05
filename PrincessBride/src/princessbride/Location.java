@@ -5,6 +5,7 @@
  */
 package princessbride;
 import java.io.Serializable;
+import java.util.Objects;
 /**
  *
  * @author lisawalker
@@ -17,6 +18,9 @@ public class Location implements Serializable{
           private double visited;
           private double description;
           private double addItem;
+
+    public Location() {
+    }
           
           
 
@@ -67,6 +71,35 @@ public class Location implements Serializable{
 
     public void setDescription(double description) {
         this.description = description;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + Objects.hashCode(this.name);
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.row) ^ (Double.doubleToLongBits(this.row) >>> 32));
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.column) ^ (Double.doubleToLongBits(this.column) >>> 32));
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.visited) ^ (Double.doubleToLongBits(this.visited) >>> 32));
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.description) ^ (Double.doubleToLongBits(this.description) >>> 32));
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.addItem) ^ (Double.doubleToLongBits(this.addItem) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Location other = (Location) obj;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" + "name=" + name + ", row=" + row + ", column=" + column + ", visited=" + visited + ", description=" + description + ", addItem=" + addItem + '}';
     }
 
            
