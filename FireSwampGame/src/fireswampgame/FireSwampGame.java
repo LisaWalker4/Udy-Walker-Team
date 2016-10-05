@@ -5,6 +5,7 @@
  */
 package fireswampgame;
 
+import byui.cit260.fireSwampGame.model.Game;
 import byui.cit260.fireSwampGame.model.Player;
 
 /**
@@ -17,14 +18,14 @@ public class FireSwampGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+               
+        Game gameOne = new Game(); 
         
-        Player playerOne = new Player();
-        
-        playerOne.setName("John Doe");
-        playerOne.setCoordinates(2.5);
-        
-        String playerInfo = playerOne.toString(); 
-        System.out.println(playerInfo);
+        gameOne.setTotalTime(3.0);
+        gameOne.setGetItem("testing");
+        gameOne.setGetMap(2.0);
+        gameOne.setSaveGame(0);
+        gameOne.setLoadGame(0);
         
     }
     
